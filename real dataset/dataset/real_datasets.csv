@@ -1,0 +1,9 @@
+name,file
+Tecator,real dataset/dataset/Tecator.RData
+Concrete,real dataset/dataset/Concrete.RData
+Boston Housing,real dataset/dataset/Boston Housing.RData
+Protein,real dataset/dataset/Protein.RData
+PCR1,real dataset/dataset/PCR1.RData
+PCR2,real dataset/dataset/PCR2.RData
+PCR3,real dataset/dataset/PCR3.RData
+SNP,real dataset/dataset/SNP.RData
