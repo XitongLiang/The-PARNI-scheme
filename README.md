@@ -1,1 +1,1 @@
-# R codes for the PARNI scheme
+# Codes for the PARNI scheme
