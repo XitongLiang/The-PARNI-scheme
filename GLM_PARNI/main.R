@@ -1,5 +1,3 @@
-setwd("/Users/zejingshao/Desktop/BVS for GLM/codes")
-
 
 source('Version7/GLM_ADS.R')
 source('Version7/GLM_PARNI.R')
