@@ -1,3 +1,5 @@
+library(rlist)
+
 # logistic regression
 
 # simulate a dataset
@@ -41,7 +43,7 @@ hyper_par <- list(n = n,
                   model = "logistic"
 )
 
-list.save(hyper_par, "study6/logistic_hyper_par.rds")
+list.save(hyper_par, "logistic_hyper_par.rds")
 
 set.seed(NULL)
 
@@ -70,7 +72,7 @@ alg_par <- list(N = 10000,  # number of iterations
 
 
 results <- GLM_PARNI(hyper_par = hyper_par, alg_par = alg_par)
-list.save(results, "study6/logistic_LA.rds")
+list.save(results, "logistic_LA.rds")
 
 
 barplot(results$estm_PIPs, ylim = c(0,1))
@@ -79,18 +81,6 @@ results$CPU_time
 results$ESJD
 
 
-# barplot(results_CPM$estm_PIPs, ylim = c(0,1))
-# barplot(results_CPM$estm_PIPs[1:50], ylim = c(0,1))
-# barplot(results_CPM$approx_PIPs, ylim = c(0,1))
-# barplot(results_CPM$ad_PIPs, ylim = c(0,1))
-# plot(results_CPM$log_post_trace[,1], type = "l")
-# max(results_CPM$log_post_trace)
-# plot(results_CPM$model_size_trace[,1], type = "l")
-# plot(results_CPM$omegas, type = "l")
-# results_CPM$CPU_time
-# results_CPM$acc_rate
-# results_CPM$ESJD
-# results_CPM$infs
 
 
 
@@ -123,7 +113,7 @@ alg_par <- list(N = 10000,  # number of iterations
 
 
 results <- GLM_PARNI(hyper_par = hyper_par, alg_par = alg_par)
-list.save(results, "study6/logistic_aALA.rds")
+list.save(results, "logistic_aALA.rds")
 
 
 barplot(results$estm_PIPs, ylim = c(0,1))
@@ -159,7 +149,7 @@ alg_par <- list(N = 10000,  # number of iterations
 
 
 results <- GLM_PARNI(hyper_par = hyper_par, alg_par = alg_par)
-list.save(results, "study6/logistic_ALA.rds")
+list.save(results, "logistic_ALA.rds")
 
 
 barplot(results$estm_PIPs, ylim = c(0,1))
@@ -225,7 +215,7 @@ weibull_hyper_par <- list(n = n,
                   model = "Weibull"
 )
 
-list.save(weibull_hyper_par, "study6/weibull_hyper_par.rds")
+list.save(weibull_hyper_par, "weibull_hyper_par.rds")
 
 
 
@@ -242,7 +232,7 @@ cox_hyper_par <- list(n = n,
 )
 
 
-list.save(cox_hyper_par, "study6/weibull_hyper_par.rds")
+list.save(cox_hyper_par, "weibull_hyper_par.rds")
 
 
 
@@ -276,7 +266,7 @@ alg_par <- list(N = 10000,  # number of iterations
 
 
 results <- GLM_PARNI(hyper_par = weibull_hyper_par, alg_par = alg_par)
-list.save(results, "study6/weibull_LA.rds")
+list.save(results, "weibull_LA.rds")
 
 barplot(results$estm_PIPs, ylim = c(0,1))
 plot(results$log_post_trace[,1], type = "l")
@@ -313,7 +303,7 @@ alg_par <- list(N = 10000,  # number of iterations
 
 
 results <- GLM_PARNI(hyper_par = weibull_hyper_par, alg_par = alg_par)
-list.save(results, "study6/weibull_aALA.rds")
+list.save(results, "weibull_aALA.rds")
 
 
 barplot(results$estm_PIPs, ylim = c(0,1))
@@ -347,7 +337,7 @@ alg_par <- list(N = 10000,  # number of iterations
 
 
 results <- GLM_PARNI(hyper_par = weibull_hyper_par, alg_par = alg_par)
-list.save(results, "study6/weibull_ALA.rds")
+list.save(results, "weibull_ALA.rds")
 
 
 barplot(results$estm_PIPs, ylim = c(0,1))
@@ -391,7 +381,7 @@ alg_par <- list(N = 10000,  # number of iterations
 
 
 results <- GLM_PARNI(hyper_par = cox_hyper_par, alg_par = alg_par)
-list.save(results, "study6/cox_LA.rds")
+list.save(results, "cox_LA.rds")
 
 
 barplot(results$estm_PIPs, ylim = c(0,1))
@@ -430,7 +420,7 @@ alg_par <- list(N = 10000,  # number of iterations
 
 
 results <- GLM_PARNI(hyper_par = cox_hyper_par, alg_par = alg_par)
-list.save(results, "study6/cox_aALA.rds")
+list.save(results, "cox_aALA.rds")
 
 
 barplot(results$estm_PIPs, ylim = c(0,1))
@@ -466,7 +456,7 @@ alg_par <- list(N = 10000,  # number of iterations
 
 
 results <- GLM_PARNI(hyper_par = cox_hyper_par, alg_par = alg_par)
-list.save(results, "study6/cox_ALA.rds")
+list.save(results, "cox_ALA.rds")
 
 
 
