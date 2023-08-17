@@ -1,22 +1,24 @@
 
 
+library(rlist)
+library(tidyverse)
 
 
 CPU_time <- matrix(0, 3,3)
 colnames(CPU_time) <- c("PARNI-adaptiveALA", "PARNI-LA", "PARNI-ALA")
 rownames(CPU_time) <- c("Logistic", "Cox's PH", "Weibull")
 
-CPU_time[1,1] <- as.numeric(list.load("study6/logistic_aALA.rds")$CPU_time[1])
-CPU_time[1,2] <- as.numeric(list.load("study6/logistic_LA.rds")$CPU_time[1])
-CPU_time[1,3] <- as.numeric(list.load("study6/logistic_ALA.rds")$CPU_time[1])
+CPU_time[1,1] <- as.numeric(list.load("logistic_aALA.rds")$CPU_time[1])
+CPU_time[1,2] <- as.numeric(list.load("logistic_LA.rds")$CPU_time[1])
+CPU_time[1,3] <- as.numeric(list.load("logistic_ALA.rds")$CPU_time[1])
 
-CPU_time[2,1] <- as.numeric(list.load("study6/cox_aALA.rds")$CPU_time[1])
-CPU_time[2,2] <- as.numeric(list.load("study6/cox_LA.rds")$CPU_time[1])
-CPU_time[2,3] <- as.numeric(list.load("study6/cox_ALA.rds")$CPU_time[1])
+CPU_time[2,1] <- as.numeric(list.load("cox_aALA.rds")$CPU_time[1])
+CPU_time[2,2] <- as.numeric(list.load("cox_LA.rds")$CPU_time[1])
+CPU_time[2,3] <- as.numeric(list.load("cox_ALA.rds")$CPU_time[1])
 
-CPU_time[3,1] <- as.numeric(list.load("study6/weibull_aALA.rds")$CPU_time[1])
-CPU_time[3,2] <- as.numeric(list.load("study6/weibull_LA.rds")$CPU_time[1])
-CPU_time[3,3] <- as.numeric(list.load("study6/weibull_ALA.rds")$CPU_time[1])
+CPU_time[3,1] <- as.numeric(list.load("weibull_aALA.rds")$CPU_time[1])
+CPU_time[3,2] <- as.numeric(list.load("weibull_LA.rds")$CPU_time[1])
+CPU_time[3,3] <- as.numeric(list.load("weibull_ALA.rds")$CPU_time[1])
 
 
 
@@ -55,9 +57,9 @@ traces_logistic <- data.frame(traces_logistic)
 
 traces_logistic$Model <- "Logistic"
 traces_logistic$Iterations <- iterations
-traces_logistic$PARNI.adaptiveALA <- list.load("study6/logistic_aALA.rds")$log_post_trace[-(1:2000),1]
-traces_logistic$PARNI.LA <- list.load("study6/logistic_LA.rds")$log_post_trace[-(1:2000),1]
-traces_logistic$PARNI.ALA <- list.load("study6/logistic_ALA.rds")$log_post_trace[-(1:2000),1]
+traces_logistic$PARNI.adaptiveALA <- list.load("logistic_aALA.rds")$log_post_trace[-(1:2000),1]
+traces_logistic$PARNI.LA <- list.load("logistic_LA.rds")$log_post_trace[-(1:2000),1]
+traces_logistic$PARNI.ALA <- list.load("logistic_ALA.rds")$log_post_trace[-(1:2000),1]
 
 
 traces_cox <- matrix(0, nrow = length(iterations), ncol = 5)
@@ -66,9 +68,9 @@ traces_cox <- data.frame(traces_cox)
 
 traces_cox$Model <- "Cox's PH"
 traces_cox$Iterations <- iterations
-traces_cox$PARNI.adaptiveALA <- list.load("study6/cox_aALA.rds")$log_post_trace[-(1:2000),1]
-traces_cox$PARNI.LA <- list.load("study6/cox_LA.rds")$log_post_trace[-(1:2000),1]
-traces_cox$PARNI.ALA <- list.load("study6/cox_ALA.rds")$log_post_trace[-(1:2000),1]
+traces_cox$PARNI.adaptiveALA <- list.load("cox_aALA.rds")$log_post_trace[-(1:2000),1]
+traces_cox$PARNI.LA <- list.load("cox_LA.rds")$log_post_trace[-(1:2000),1]
+traces_cox$PARNI.ALA <- list.load("cox_ALA.rds")$log_post_trace[-(1:2000),1]
 
 
 
@@ -78,9 +80,9 @@ traces_weibull <- data.frame(traces_weibull)
 
 traces_weibull$Model <- "Weibull"
 traces_weibull$Iterations <- iterations
-traces_weibull$PARNI.adaptiveALA <- list.load("study6/weibull_aALA.rds")$log_post_trace[-(1:2000),1]
-traces_weibull$PARNI.LA <- list.load("study6/weibull_LA.rds")$log_post_trace[-(1:2000),1]
-traces_weibull$PARNI.ALA <- list.load("study6/weibull_ALA.rds")$log_post_trace[-(1:2000),1]
+traces_weibull$PARNI.adaptiveALA <- list.load("weibull_aALA.rds")$log_post_trace[-(1:2000),1]
+traces_weibull$PARNI.LA <- list.load("weibull_LA.rds")$log_post_trace[-(1:2000),1]
+traces_weibull$PARNI.ALA <- list.load("weibull_ALA.rds")$log_post_trace[-(1:2000),1]
 
 
 
