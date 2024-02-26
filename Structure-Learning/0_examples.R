@@ -80,7 +80,7 @@ results_PARNI <- PARNI(alg_par, hyper_par)
 results_PARNI$omega
 
 # results$estm_PIPs
-DAG_heatmap(dataset$W)
+DAG_heatmap(gsimmat)
 DAG_heatmap(results_PARNI$estm_PIPs, text_bound = 0.7, true_graph = dataset$W)
 DAG_heatmap(results_PARNI$ad_PIPs, text_bound = 0.7, true_graph = dataset$W)
 
