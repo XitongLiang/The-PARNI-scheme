@@ -4,7 +4,7 @@ library(tidyverse)
 library(pcalg)
 library(BiDAG)
 
-setwd("codes/algorithms")
+setwd("./algorithms")
 
 source("ADR.R")
 source("PARNI.R")
@@ -17,6 +17,7 @@ source("log_llh_DAG.R")
 source("log_llh_DAG_update_table.R")
 source("update_LA_DAG_sawp.R")
 source("other_functions.R")
+source("DAG_heatmap.R")
 
 source("marPIPs_bge_H.R")
 source("log_llh_bge_table.R")
